@@ -30,8 +30,8 @@ module video_timing_controller #(
 		parameter v_spluse = 4,
 		parameter vb_porch = 23,
 		
-		parameter h_pol = 1'b1,
-		parameter v_pol = 1'b1 )
+		parameter [0:0] h_pol = 1'b1,
+		parameter [0:0] v_pol = 1'b1 )
 	(
 	input pixel_clk,
 	input reset,
@@ -40,14 +40,10 @@ module video_timing_controller #(
 	output reg h_sync,
 	output reg v_sync,
 	
-	output reg [31:0] h_pos,
-	output reg [31:0] v_pos
+	output reg [$clog2(h_pixels) - 1:0] h_pos,
+	output reg [$clog2(v_pixels) - 1:0] v_pos
 	
     );
-	
-	
-	wire [31:0]h_period = h_pixels + hf_porch + h_spulse + hb_porch;
-	wire [31:0]v_period = v_pixels + vf_porch + v_spluse + vb_porch;
 
 	initial begin
 		h_pos = 0;
@@ -68,7 +64,7 @@ module video_timing_controller #(
 		
 		else begin
 			if(en) begin
-				if(h_pos < h_period - 1) begin 
+				if(h_pos < h_pixels + hf_porch + h_spulse + hb_porch) begin 
 					h_pos <= h_pos + 1;
 					
 				end
@@ -77,7 +73,7 @@ module video_timing_controller #(
 				
 					h_pos <= 0;
 					
-					if (v_pos < v_period - 1)begin
+					if (v_pos < v_pixels + vf_porch + v_spluse + vb_porch)begin
 						v_pos <= v_pos + 1;
 						
 					end
