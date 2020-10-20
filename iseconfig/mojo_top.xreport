@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-10-16T16:58:14</DateModified>
+  <DateModified>2020-10-20T16:18:04</DateModified>
   <ModuleName>mojo_top</ModuleName>
-  <SummaryTimeStamp>2013-04-16T10:54:27</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/mhakb/Documents/XilinxProjects/mojo-base-project-master/iseconfig/mojo_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/mhakb/Documents/XilinxProjects/mojo-base-project-master/syn\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2020-10-20T16:09:50</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/mhakb/Documents/XilinxProjects/VGA_text_mode/iseconfig/mojo_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/mhakb/Documents/XilinxProjects/VGA_text_mode/syn\</ImplementationReportsDirectory>
   <DateInitialized>2012-11-08T12:38:20</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
