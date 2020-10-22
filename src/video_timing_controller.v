@@ -35,13 +35,12 @@ module video_timing_controller #(
 	(
 	input pixel_clk,
 	input reset,
-	input en,
 	
 	output reg h_sync,
 	output reg v_sync,
 	
-	output reg [31:0] h_pos,
-	output reg [31:0] v_pos
+	output reg [$clog2(h_pixels):0] h_pos,
+	output reg [$clog2(h_pixels):0] v_pos
 	
     );
 	
@@ -68,13 +67,13 @@ module video_timing_controller #(
 		
 		else begin
 				if(h_pos < h_period - 1)
-					h_pos <= h_pos + 1;
+					h_pos <= h_pos + 1'b1;
 				
 				else begin
 					h_pos <= 0;
 					
 					if (v_pos < v_period - 1)
-						v_pos <= v_pos + 1;
+						v_pos <= v_pos + 1'b1;
 					
 					else
 						v_pos <= 0;

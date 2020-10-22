@@ -30,7 +30,7 @@ module mojo_top(
 	
 	assign addr = (char << 7) + glyph_x + (glyph_y << 3);
 	//Generating 25MHz pixel clock for vga timing control unit
-	clk_25MHz instance_name(
+	clk_generator clk_40MHz(
     .CLK_IN1(clk),      
     .CLK_OUT1(pixel_clk),     
     .RESET(rst));
