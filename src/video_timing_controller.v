@@ -67,48 +67,33 @@ module video_timing_controller #(
 		end
 		
 		else begin
-				if(h_pos < h_period - 1) begin 
+				if(h_pos < h_period - 1)
 					h_pos <= h_pos + 1;
-					
-				end
 				
 				else begin
-				
 					h_pos <= 0;
 					
-					if (v_pos < v_period - 1)begin
+					if (v_pos < v_period - 1)
 						v_pos <= v_pos + 1;
-						
-					end
 					
-					else begin
+					else
 						v_pos <= 0;
-						
-					end
 					
 				end
 				
 				//setting sync signals
 				
-				if(h_pos < h_pixels + hf_porch || h_pos >= h_pixels + hf_porch + h_spulse) begin
+				if(h_pos < h_pixels + hf_porch || h_pos >= h_pixels + hf_porch + h_spulse)
 					h_sync <= ~h_pol;
-					
-				end
 				
-				else begin
+				else
 					h_sync <= h_pol;
-					
-				end
 				
-				if(v_pos < v_pixels + vf_porch || v_pos >= v_pixels + vf_porch + v_spluse) begin
+				if(v_pos < v_pixels + vf_porch || v_pos >= v_pixels + vf_porch + v_spluse)
 					v_sync <= ~v_pol;
-					
-				end
 				
-				else begin
+				else
 					v_sync <= v_pol;
-					
-				end
 		end
 		
 	end
